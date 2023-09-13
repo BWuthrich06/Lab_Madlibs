@@ -5,16 +5,12 @@
 </head>
 <body>
 
-    <ul>
-        {% for animal in animals %}
-          <li>{{ animal }}</li>
-        {% endfor %}
-      </ul>
-
+    <!-- How do we bring in this list and loop through it? How do we send it to html and get items?-->
+ 
     <p>There once was a {{ color }} {{ noun }} sitting in the Hackbright Lab.
         When {{ person }} went to pick it up, it burst into flames in a totally
         {{ adjective }} way. There was also these {% for animal in animals %}
-        {{ animal }} {% endfor %} watching.</p>
+        {{ animal }}, {% endfor %} and other animals watching.</p>
 
         
 </body>
