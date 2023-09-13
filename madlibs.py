@@ -61,6 +61,9 @@ def show_madlib_form():
     else:
         return render_template("goodbye.html")
     
+
+
+
 @app.route("/madlib")
 def show_madlib():
     """"show madlib"""
@@ -69,9 +72,22 @@ def show_madlib():
     color = request.args.get("color")
     noun = request.args.get("noun")
     adjective = request.args.get("adjective")
+    
+    chosen_animals = []
 
+    animal1 = request.args.get("animal1")
+    animal2 = request.args.get("animal2")
+    animal3 = request.args.get("animal3")
+    animal4 = request.args.get("animal4")
+    animal5 = request.args.get("animal5")
 
-    return render_template("madlib.html", person=person, color=color, noun=noun, adjective=adjective)
+    animals=[animal1, animal2, animal3, animal4, animal5]
+
+    for animal in animals:
+        if animal:
+            chosen_animals.append(animal)
+
+    return render_template("madlib.html", person=person, color=color, noun=noun, adjective=adjective, animals=chosen_animals)
 
 
 if __name__ == "__main__":
